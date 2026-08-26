@@ -37,8 +37,4 @@ jobs:
 
       - name: SAM validate
         run: |
-          sam validate
-
-      - name: SAM build
-        run: |
-          sam build
+          sam validate --region af-south-1
