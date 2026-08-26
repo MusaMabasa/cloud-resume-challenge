@@ -32,3 +32,6 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.bak
+
+github-trust-policy.json
+github-deploy-policy.json

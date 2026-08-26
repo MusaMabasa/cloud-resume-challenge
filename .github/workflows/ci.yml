@@ -1,4 +1,4 @@
-name: Cloud Resume CI
+name: Cloud Resume CI/CD
 
 on:
   push:
@@ -7,6 +7,10 @@ on:
   pull_request:
     branches:
       - main
+
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   test-and-build:
@@ -32,9 +36,20 @@ jobs:
         run: |
           python -m pytest -v
 
-      - name: Validate SAM template
+      - name: Configure AWS credentials
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::943273443831:role/GitHubActions-CloudResume-Deploy
+          aws-region: af-south-1
+
+      - name: Set up AWS SAM
         uses: aws-actions/setup-sam@v2
 
       - name: SAM validate
         run: |
           sam validate --region af-south-1
+
+      - name: SAM build
+        run: |
+          sam build
