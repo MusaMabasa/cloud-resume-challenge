@@ -1,0 +1,58 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Transform: AWS::Serverless-2016-10-31
+
+Description: >
+  Cloud Resume Challenge backend
+  using AWS Lambda and DynamoDB.
+
+Resources:
+
+  ResumeViewCounterFunction:
+    Type: AWS::Serverless::Function
+
+    Properties:
+      Runtime: python3.14
+
+      Handler: lambda_function.lambda_handler
+
+      CodeUri: lambda_code/
+
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref ResumeViewCountTable
+
+      MemorySize: 128
+
+      Timeout: 3
+
+      Architectures:
+        - x86_64
+
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref ResumeViewCountTable
+
+      FunctionUrlConfig:
+        AuthType: NONE
+
+        Cors:
+          AllowOrigins:
+            - https://musaresume.bluetechnology.co.za
+
+          AllowMethods:
+            - GET
+
+  ResumeViewCountTable:
+    Type: AWS::DynamoDB::Table
+
+    Properties:
+      BillingMode: PAY_PER_REQUEST
+
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH

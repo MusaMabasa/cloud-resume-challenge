@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# AWS SAM
+.aws-sam/
+
+# IDE
+.idea/
+.vscode/
+
+# Secrets / credentials
+key.json
+*.pem
+*.key
+.env
+.env.*
+.aws/
+
+# Personal documents
+*.pdf
+*.doc
+*.docx
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak

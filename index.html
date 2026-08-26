@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Musa Mabasa | AWS Cloud Engineer & IT Professional</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #131a22, #232f3e, #ff9900);
+      display: flex;
+      align-items: center;
+      padding: 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-text h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #e2e8f0;
+      max-width: 600px;
+    }
+
+    .tag {
+      color: #ffb84d;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .buttons {
+      margin-top: 35px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #ff9900;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #ffad33;
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      border: 2px solid #ff9900;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: #ff9900;
+      transform: translateY(-3px);
+    }
+
+    .hero-card {
+      flex: 1;
+      min-width: 300px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .card-grid p {
+      color: #ffb84d;
+      margin-bottom: 5px;
+      font-size: 0.9rem;
+    }
+
+    .card-grid h3 {
+      font-size: 1.2rem;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: #94a3b8;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills {
+      background: #111827;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-box {
+      background: #1e293b;
+      border: 1px solid #334155;
+      padding: 25px;
+      border-radius: 18px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .skill-box:hover {
+      border-color: #ff9900;
+      transform: translateY(-5px);
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .experience-card {
+      background: #1e293b;
+      padding: 35px;
+      border-radius: 22px;
+      border: 1px solid #334155;
+      transition: 0.3s ease;
+    }
+
+    .experience-card:hover {
+      border-color: #ff9900;
+      transform: translateY(-6px);
+    }
+
+    .experience-card span {
+      color: #ff9900;
+      font-weight: bold;
+    }
+
+    .experience-card h3 {
+      margin: 15px 0;
+      font-size: 1.5rem;
+    }
+
+    .experience-card p {
+      color: #cbd5e1;
+    }
+
+    /* =========================
+       CERTIFICATIONS
+    ========================= */
+
+    .certifications {
+      background: #111827;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .cert-card {
+      background: #1e293b;
+      padding: 35px;
+      border-radius: 22px;
+      border: 1px solid #334155;
+      text-align: center;
+    }
+
+    .cert-card h3 {
+      color: #ff9900;
+      margin-bottom: 15px;
+    }
+
+    /* =========================
+       AWS BADGES
+    ========================= */
+
+    .certification-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .certification-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 22px;
+      padding: 30px;
+      text-align: center;
+      color: white;
+      transition: 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .certification-card:hover {
+      border-color: #ff9900;
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .certification-card img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      margin-bottom: 20px;
+      transition: 0.3s ease;
+    }
+
+    .certification-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .certification-card h3 {
+      color: #ff9900;
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+
+    .certification-card p {
+      color: #cbd5e1;
+    }
+
+    /* =========================
+       VALIDATION NUMBER
+    ========================= */
+
+    .validation-box {
+      margin-top: 20px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .validation-label {
+      display: block;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
+    .validation-number {
+      display: inline-block;
+      background: #0f172a;
+      border: 1px solid #475569;
+      color: #e2e8f0;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-family: "Courier New", monospace;
+      font-size: 0.85rem;
+      user-select: text;
+      -webkit-user-select: text;
+      cursor: text;
+      word-break: break-all;
+    }
+
+    .copy-btn {
+      margin-top: 10px;
+      padding: 8px 14px;
+      border: 1px solid #ff9900;
+      background: transparent;
+      color: #ff9900;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      background: #ff9900;
+      color: white;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: #1e293b;
+      padding: 35px;
+      border-radius: 22px;
+      border: 1px solid #334155;
+    }
+
+    .project-card h3 {
+      color: #ff9900;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    .project-card p {
+      color: #cbd5e1;
+      margin-bottom: 25px;
+    }
+
+    .project-card a {
+      color: #ff9900;
+      font-weight: bold;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      background: #111827;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 18px;
+      padding: 25px;
+      color: white;
+      transition: 0.3s ease;
+    }
+
+    .contact-card:hover {
+      border-color: #ff9900;
+      transform: translateY(-5px);
+    }
+
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #ff9900;
+      color: white;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .contact-card h3 {
+      margin-bottom: 5px;
+      color: #ff9900;
+    }
+
+    .contact-card p {
+      color: #cbd5e1;
+      word-break: break-word;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      background: linear-gradient(135deg, #232f3e, #131a22);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: #cbd5e1;
+      max-width: 700px;
+      margin: auto auto 40px;
+      font-size: 1.1rem;
+    }
+
+    /* =========================
+       VISITOR COUNTER
+    ========================= */
+
+    .visitor-counter {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 9999;
+      background: rgba(15, 23, 42, 0.92);
+      color: #e2e8f0;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-size: 0.9rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(8px);
+    }
+
+    .visitor-counter strong {
+      color: #ff9900;
+      margin-left: 6px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #0b1120;
+      padding: 30px;
+      text-align: center;
+      color: #94a3b8;
+      border-top: 1px solid #1e293b;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 768px) {
+
+      .hero-text h1 {
+        font-size: 2.8rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.2rem;
+      }
+
+      .cta h2 {
+        font-size: 2.4rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .certification-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .visitor-counter {
+        right: 10px;
+        bottom: 10px;
+        font-size: 0.8rem;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="hero">
+
+    <div class="container hero-content">
+
+      <div class="hero-text">
+
+        <div class="tag">
+          AWS CLOUD ENGINEER & IT PROFESSIONAL
+        </div>
+
+        <h1>
+          Musa Gerald Mabasa
+        </h1>
+
+        <p>
+          Experienced IT professional with expertise in AWS cloud services,
+          Python programming, networking, infrastructure support, and
+          enterprise IT solutions.
+        </p>
+
+        <div class="buttons">
+
+          <a href="#experience" class="btn btn-primary">
+            View Experience
+          </a>
+
+          <a
+            href="MusaMabasa_CV_2025_02.pdf"
+            download
+            class="btn btn-secondary">
+            Download CV
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-card">
+
+        <div class="card-grid">
+
+          <div>
+            <p>Nationality</p>
+            <h3>South African</h3>
+          </div>
+
+          <div>
+            <p>License</p>
+            <h3>Code 10 C1</h3>
+          </div>
+
+          <div>
+            <p>Languages</p>
+            <h3>
+              Xitsonga, English, Tswana & Zulu
+            </h3>
+          </div>
+
+          <div>
+            <p>Specialization</p>
+            <h3>
+              AWS, Technical & Python
+            </h3>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SKILLS
+  ========================= -->
+
+  <section class="skills">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Technical Skills
+        </h2>
+
+        <p>
+          Skilled in cloud technologies, IT support, networking,
+          troubleshooting, and automation.
+        </p>
+
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-box">
+          AWS Cloud
+        </div>
+
+        <div class="skill-box">
+          Python Programming
+        </div>
+
+        <div class="skill-box">
+          Networking
+        </div>
+
+        <div class="skill-box">
+          IT Support
+        </div>
+
+        <div class="skill-box">
+          Data Analysis
+        </div>
+
+        <div class="skill-box">
+          Automation
+        </div>
+
+        <div class="skill-box">
+          Cloud Infrastructure
+        </div>
+
+        <div class="skill-box">
+          Windows Support
+        </div>
+
+        <div class="skill-box">
+          Troubleshooting
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       EXPERIENCE
+  ========================= -->
+
+  <section id="experience">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Work Experience
+        </h2>
+
+        <p>
+          Over 10 years of experience in IT support, software systems,
+          infrastructure, cloud technologies, and enterprise environments.
+        </p>
+
+      </div>
+
+      <div class="experience-grid">
+
+        <div class="experience-card">
+
+          <span>
+            2023 - Current
+          </span>
+
+          <h3>
+            Software Technician
+          </h3>
+
+          <p>
+            Booyco Electronics
+          </p>
+
+        </div>
+
+
+        <div class="experience-card">
+
+          <span>
+            2019 - 2023
+          </span>
+
+          <h3>
+            Cloud Engineer
+          </h3>
+
+          <p>
+            BlueIT Technology
+          </p>
+
+        </div>
+
+
+        <div class="experience-card">
+
+          <span>
+            2018
+          </span>
+
+          <h3>
+            Change Implementer
+          </h3>
+
+          <p>
+            Anglo American
+          </p>
+
+        </div>
+
+
+        <div class="experience-card">
+
+          <span>
+            2016 - 2017
+          </span>
+
+          <h3>
+            IT Technician
+          </h3>
+
+          <p>
+            FPD
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CERTIFICATIONS
+  ========================= -->
+
+  <section class="certifications">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Certifications
+        </h2>
+
+        <p>
+          AWS and Python certifications supporting cloud and software expertise.
+        </p>
+
+      </div>
+
+
+      <div class="cert-grid">
+
+        <div class="cert-card">
+
+          <h3>
+            BSc IT Management
+          </h3>
+
+          <p>
+            PC Training and Business College • Completed January 2014
+          </p>
+
+        </div>
+
+
+        <div class="cert-card">
+
+          <h3>
+            AWS Cloud Practitioner
+          </h3>
+
+          <p>
+            AWS Academy • Obtained July 2023
+          </p>
+
+        </div>
+
+
+        <div class="cert-card">
+
+          <h3>
+            AWS Solutions Architect – Associate
+          </h3>
+
+          <p>
+            AWS • Obtained August 2026
+          </p>
+
+        </div>
+
+
+        <div class="cert-card">
+
+          <h3>
+            Python Professional
+          </h3>
+
+          <p>
+            Python Institute • Studying
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROJECTS
+  ========================= -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Projects
+        </h2>
+
+        <p>
+          Hands-on cloud and Python projects demonstrating practical skills.
+        </p>
+
+      </div>
+
+
+      <div class="project-grid">
+
+        <div class="project-card">
+
+          <h3>
+            AWS Cloud Resume
+          </h3>
+
+          <p>
+            Built and hosted a cloud-based resume using AWS S3,
+            CloudFront, Lambda, and Route53.
+          </p>
+
+          <a
+            href="https://musaresume.bluetechnology.co.za/"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Visit Project →
+
+          </a>
+
+        </div>
+
+
+        <div class="project-card">
+
+          <h3>
+            Python Games
+          </h3>
+
+          <p>
+            Developed multiple Python-based projects including Snake,
+            Pong, Turtle Race, and automation scripts using OOP.
+          </p>
+
+          <a
+            href="https://github.com/MusaMabasa"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            View GitHub →
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       AWS CERTIFICATIONS
+  ========================= -->
+
+  <section class="certifications">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          AWS Certifications
+        </h2>
+
+        <p>
+          Professional AWS credentials and cloud expertise.
+        </p>
+
+      </div>
+
+
+      <div class="certification-grid">
+
+
+        <!-- AWS CLOUD PRACTITIONER -->
+
+        <div class="certification-card">
+
+          <a
+            href="https://aws.amazon.com/verification/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="AWS Certification Verification">
+
+            <img
+              src="aws-cloud-practitioner.png"
+              alt="AWS Certified Cloud Practitioner badge"
+              loading="lazy">
+
+          </a>
+
+          <div>
+
+            <h3>
+              AWS Certified Cloud Practitioner
+            </h3>
+
+            <p>
+              Obtained July 2023
+            </p>
+
+          </div>
+
+
+          <div class="validation-box">
+
+            <span class="validation-label">
+              AWS Validation Number
+            </span>
+
+            <span
+              class="validation-number"
+              id="cloud-practitioner-number">
+
+              MEL6G51CX2FEQ1K7
+
+            </span>
+
+            <br>
+
+            <button
+              class="copy-btn"
+              type="button"
+              onclick="copyValidation('cloud-practitioner-number', this)">
+
+              Copy Validation Number
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- AWS SOLUTIONS ARCHITECT -->
+
+        <div class="certification-card">
+
+          <a
+            href="https://aws.amazon.com/verification/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="AWS Certification Verification">
+
+            <img
+              src="aws-solutions-architect-associate.png"
+              alt="AWS Certified Solutions Architect Associate badge"
+              loading="lazy">
+
+          </a>
+
+          <div>
+
+            <h3>
+              AWS Certified Solutions Architect – Associate
+            </h3>
+
+            <p>
+              Obtained August 2026
+            </p>
+
+          </div>
+
+
+          <div class="validation-box">
+
+            <span class="validation-label">
+              AWS Validation Number
+            </span>
+
+            <span
+              class="validation-number"
+              id="solutions-architect-number">
+
+              5a40c91405554287b28d21d03aed2cd2
+
+            </span>
+
+            <br>
+
+            <button
+              class="copy-btn"
+              type="button"
+              onclick="copyValidation('solutions-architect-number', this)">
+
+              Copy Validation Number
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section class="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Contact Me
+        </h2>
+
+        <p>
+          Available for AWS Cloud Engineering, technical support,
+          and IT opportunities.
+        </p>
+
+      </div>
+
+
+      <div class="contact-grid">
+
+
+        <a
+          class="contact-card"
+          href="mailto:musa@bluetechnology.co.za">
+
+          <span
+            class="contact-icon"
+            aria-hidden="true">
+
+            ✉
+
+          </span>
+
+          <div>
+
+            <h3>
+              Email
+            </h3>
+
+            <p>
+              musa@bluetechnology.co.za
+            </p>
+
+          </div>
+
+        </a>
+
+
+        <a
+          class="contact-card"
+          href="mailto:mgmabasa@yahoo.com">
+
+          <span
+            class="contact-icon"
+            aria-hidden="true">
+
+            ✉
+
+          </span>
+
+          <div>
+
+            <h3>
+              Alternative Email
+            </h3>
+
+            <p>
+              mgmabasa@yahoo.com
+            </p>
+
+          </div>
+
+        </a>
+
+
+        <a
+          class="contact-card"
+          href="tel:+27797094650">
+
+          <span
+            class="contact-icon"
+            aria-hidden="true">
+
+            ☎
+
+          </span>
+
+          <div>
+
+            <h3>
+              Phone
+            </h3>
+
+            <p>
+              079 709 4650
+            </p>
+
+          </div>
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CTA
+  ========================= -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>
+        Ready For Your Next IT Project
+      </h2>
+
+      <p>
+        Skilled in AWS cloud technologies, networking,
+        infrastructure support, Python development,
+        and enterprise IT solutions.
+      </p>
+
+      <a
+        href="MusaMabasa_CV_2025_02.pdf"
+        download
+        class="btn btn-primary">
+
+        Download CV
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <p>
+      © 2026 Musa Gerald Mabasa • AWS CLOUD ENGINEER & IT PROFESSIONAL
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       VISITOR COUNTER
+  ========================= -->
+
+  <div
+    class="visitor-counter"
+    aria-live="polite">
+
+    <span>
+      👁 Visitors:
+    </span>
+
+    <strong id="visitor-count">
+      Loading...
+    </strong>
+
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    /*
+     * ==========================================
+     * AWS CLOUD RESUME VISITOR COUNTER
+     * ==========================================
+     */
+
+    const FUNCTION_URL =
+      "https://wze7g5ncfvdjyx654jr4gotq3m0nmcgi.lambda-url.af-south-1.on.aws/";
+
+
+    /*
+     * VISITOR COUNTER
+     */
+
+    document.addEventListener("DOMContentLoaded", async () => {
+
+      const counter =
+        document.getElementById("visitor-count");
+
+      if (!counter) {
+        return;
+      }
+
+      try {
+
+        const response =
+          await fetch(FUNCTION_URL, {
+            method: "GET",
+            cache: "no-store"
+          });
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            `HTTP ${response.status}`
+          );
+
+        }
+
+
+        const data =
+          await response.json();
+
+
+        if (typeof data.views === "number") {
+
+          counter.textContent =
+            data.views.toLocaleString();
+
+        } else {
+
+          counter.textContent = "—";
+
+        }
+
+      } catch (error) {
+
+        console.error(
+          "Visitor counter error:",
+          error
+        );
+
+        counter.textContent = "—";
+
+      }
+
+    });
+
+
+    /*
+     * ==========================================
+     * COPY AWS VALIDATION NUMBER
+     * ==========================================
+     */
+
+    async function copyValidation(
+      elementId,
+      button
+    ) {
+
+      const element =
+        document.getElementById(elementId);
+
+      if (!element) {
+        return;
+      }
+
+      const validationNumber =
+        element.textContent.trim();
+
+
+      try {
+
+        await navigator.clipboard.writeText(
+          validationNumber
+        );
+
+
+        const originalText =
+          button.textContent;
+
+
+        button.textContent =
+          "✓ Copied!";
+
+
+        setTimeout(() => {
+
+          button.textContent =
+            originalText;
+
+        }, 2000);
+
+
+      } catch (error) {
+
+        console.error(
+          "Copy failed:",
+          error
+        );
+
+
+        /*
+         * Fallback for older browsers
+         */
+
+        const textArea =
+          document.createElement("textarea");
+
+        textArea.value =
+          validationNumber;
+
+        document.body.appendChild(
+          textArea
+        );
+
+        textArea.select();
+
+        document.execCommand("copy");
+
+        document.body.removeChild(
+          textArea
+        );
+
+
+        button.textContent =
+          "✓ Copied!";
+
+
+        setTimeout(() => {
+
+          button.textContent =
+            "Copy Validation Number";
+
+        }, 2000);
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
