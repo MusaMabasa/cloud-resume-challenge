@@ -112,3 +112,5 @@ The project combines a static cloud-hosted resume website with a serverless visi
 
 &#x20;                 └─────────────────────┘
 
+
+OIDC deployment pipeline configured.
